@@ -14,11 +14,6 @@ import Container from "@mui/material/Container";
 const index = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get("email"),
-    //   password: data.get("password"),
-    // });
   };
   return (
     <div>
@@ -75,9 +70,9 @@ const index = (props) => {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid container align="center">
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" >
                   Forgot password?
                 </Link>
               </Grid>
