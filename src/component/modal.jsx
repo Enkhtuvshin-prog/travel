@@ -29,7 +29,7 @@ export default function NestedModal() {
 
   return (
     <div>
-      <Button variant='warming' sx={{color: "#000"}}  onClick={handleOpen}>Sign in</Button>
+      <Button  sx={{color: "white"}}  onClick={handleOpen}>Sign in</Button>
       <Modal
         open={open}
         onClose={handleClose}

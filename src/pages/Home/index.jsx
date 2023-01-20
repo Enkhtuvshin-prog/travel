@@ -1,6 +1,8 @@
 import { Box, Grid } from "@mui/material";
+import zIndex from "@mui/material/styles/zIndex";
 import React from "react";
 import MenuBar from "../../component/Navbar";
+import Banner from "./Banner";
 // import Paper from 'material-ui/Paper';
 
 const index = () => {
@@ -14,11 +16,16 @@ const index = () => {
         backgroundPosition: "center center",
         backgroundAttachment: "fixed",
         height: "150vh",
-        // width: "100%",
+        position: "relative",
+        fontFamily: "Helvetica"
       }}
     >
-      <Box>
+      <Box
+      >
         <MenuBar />
+        <Banner  />
+        
+
       </Box>
     </Grid>
   );

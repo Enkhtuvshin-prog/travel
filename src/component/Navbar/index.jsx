@@ -20,7 +20,7 @@ import NestedModal from "../modal";
 // import { Paper } from "@mui/material";
 
 const drawerWidth = 240;
-const navItems = ["Tour", "Mentorship", "masterclass", "Contact"];
+const navItems = ["Home", "styles", "flights", "Packages"];
 
 function MenuBar(props) {
   const { window } = props;
@@ -54,7 +54,7 @@ function MenuBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ backgroundColor: "transparent", boxShadow: "none" }} >
         <Toolbar>
           <TravelExploreIcon sx={{ mr: 2, fontSize: "3rem" }} />
           <IconButton
@@ -64,14 +64,14 @@ function MenuBar(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon sx={{ ml: "auto" }} />
+            <MenuIcon sx={{ mx: "auto" }} />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            Traveling with Me
+            trxvl
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -80,7 +80,7 @@ function MenuBar(props) {
               </Button>
             ))}
             {/* <Button  variant='warming' sx={{color: "white" }}><AccountCircleIcon/> Sign in</Button> */}
-            <Button sx={{ color: "#000" }}>
+            <Button>
               <NestedModal />
             </Button>
           </Box>
