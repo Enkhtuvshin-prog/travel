@@ -16,7 +16,7 @@ const data = [
 
 const Categoty = () => {
   return (
-    <Grid container spacing={10} marginY={"5px"} >
+    <Grid container spacing={10} marginY={"5px"}ç >
       {
         data.map((x) => <Grid item xs={1}>
           <img src={x.img} />

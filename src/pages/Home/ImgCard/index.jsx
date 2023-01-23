@@ -1,4 +1,3 @@
-import { Image } from "@mui/icons-material";
 import { Grid, Typography, Box, ThemeProvider } from "@mui/material";
 import React from "react";
 
@@ -17,10 +16,10 @@ const index = () => {
   return (
     <Grid
       sx={{
-        marginY: "200px",
+        marginY: "20px"
       }}
     >
-      <Typography variant="h4">Top Vacation Destinations</Typography>
+      <Typography variant="h4" color={"#000"}>Top Vacation Destinations</Typography>
       <Grid
         container
         columnSpacing={{ xs: 4 }}

@@ -19,7 +19,7 @@ const Banner = () => {
       </Typography>
       <SearchBtn />
       <Categoty />
-      <ImgCard />
+      {/* <ImgCard /> */}
     </Box>
   );
 };
