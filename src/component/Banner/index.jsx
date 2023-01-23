@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import SearchBtn from "./Search";
 import Categoty from "./Categoty";
-import ImgCard from "../ImgCard";
+// import ImgCard from "../ImgCard";
 
 const Banner = () => {
   return (
@@ -10,7 +10,7 @@ const Banner = () => {
       sx={{
         position: "absolute",
         color: "white",
-        top: "20%",
+        top: "30%",
         left: "10%",
       }}
     >

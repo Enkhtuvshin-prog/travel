@@ -16,24 +16,25 @@ const index = () => {
   return (
     <Grid
       sx={{
-        marginY: "20px"
+        // position: "absolute",
+        marginTop: -20,
+        color: "white",
+        top: "80%",
+        left: "10%",
       }}
     >
-      <Typography variant="h4" color={"#000"}>Top Vacation Destinations</Typography>
-      <Grid
-        container
-        columnSpacing={{ xs: 4 }}
-        sx={{ mt: 3, position: "relative" }}
-      >
+      <Typography variant="h4" fontWeight="600">
+        Top Vacation Destinations
+      </Typography>
+      <Grid container columns={12} spacing={2} sx={{ marginY: 3 }}>
         {data.map((x) => (
-          <Grid xs={3}>
+          <Grid item xs={3} sx={{ position: "relative" }}>
             <Box>
-              <img src={`${x.img}`} style={{ borderRadius: 20 }} />
+              <img
+                src={`${x.img}`}
+                style={{ borderRadius: 20, width: "100%", height: "250px" }}
+              />
             </Box>
-
-            {/* <Skeleton variant="rounded"> */}
-            {/* </Skeleton> */}
-
             <Typography
               variant="h5"
               sx={{

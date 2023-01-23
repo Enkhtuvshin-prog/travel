@@ -2,8 +2,8 @@ import { Box, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import MenuBar from "../../component/Navbar";
-import Banner from "../Home/Banner";
-import MediaCard from "./CardItem";
+import Banner from "../../component/Banner";
+import MediaCard from "../../component/CardItem";
 const Second = () => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
@@ -18,19 +18,17 @@ const Second = () => {
           // background: "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 13.65%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))",
           backgroundAttachment: "fixed",
           height: "100vh",
-          width: "100%",
+          // width: "100%",
           position: "relative",
         }}
       >
         {" "}
       </Grid>
       <Container>
-        <MenuBar/>
-        <Banner/>
-        <MediaCard/>
-
+        <MenuBar />
+        <Banner />
+        <MediaCard />
       </Container>
-
     </Grid>
   );
 };

@@ -2,15 +2,15 @@ import { Box, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import MenuBar from "../../component/Navbar";
-import Banner from "./Banner";
-import ImgCard from "./ImgCard"
-import Offers from "./Offrers";
-import PropertyType from "./PropertyType";
-import Plan from "./Plan";
-import CommunityCard from "./Community";
+import Banner from "../../component/Banner";
+import ImgCard from "../../component/ImgCard";
+import Offers from "../../component/Offrers";
+import PropertyType from "../../component/PropertyType";
+import Plan from "../../component/Plan";
+import CommunityCard from "../../component/Community";
 // import Paper from 'material-ui/Paper';
-import TravelApp from "./TravelApp";
-import Footer from "./Footer";
+import TravelApp from "../../component/TravelApp";
+import Footer from "../../component/Footer";
 
 const index = () => {
   return (
@@ -22,28 +22,26 @@ const index = () => {
           backgroundSize: "cover",
           // height: "calc(100vh - 100px)",
           backgroundPosition: "center center",
-          background: "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 13.65%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(Pexels Videos 2146396.png)",
+          background:
+            "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 13.65%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(Pexels Videos 2146396.png)",
           backgroundAttachment: "fixed",
-          height: "95vh",
-          width: "100%",
-          position: "relative",
+          height: "90vh",
         }}
-      >
-        {" "}
-      </Grid>
+      ></Grid>
       <Container>
         <MenuBar />
         <Banner />
-        <ImgCard/>
-        <Offers/>      
-        <PropertyType/>
-        <Plan/>
-        <CommunityCard/>
+
+        <ImgCard />
+
+        <Offers />
+        <PropertyType />
+        <Plan />
+        <CommunityCard />
       </Container>
       <Box>
-        <TravelApp/>
-        <Footer/>
-
+        <TravelApp />
+        <Footer />
       </Box>
     </Grid>
   );

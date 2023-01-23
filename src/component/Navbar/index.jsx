@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NestedModal from "../modal";
+import { NavLink } from "react-router-dom";
 // import { Paper } from "@mui/material";
 
 const drawerWidth = 240;
@@ -40,7 +41,7 @@ function MenuBar(props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <NavLink to={"/"} primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -54,7 +55,10 @@ function MenuBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: "transparent", boxShadow: "none" }} >
+      <AppBar
+        component="nav"
+        sx={{ backgroundColor: "transparent", boxShadow: "none" }}
+      >
         <Toolbar>
           <TravelExploreIcon sx={{ mr: 2, fontSize: "3rem" }} />
           <IconButton
@@ -75,9 +79,18 @@ function MenuBar(props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <NavLink
+                to={"/"}
+                key={item}
+                style={{
+                  color: "#fff",
+                  padding: "10px",
+                  textDecoration: "none",
+                  fontWeight: "600",
+                }}
+              >
                 {item}
-              </Button>
+              </NavLink>
             ))}
             {/* <Button  variant='warming' sx={{color: "white" }}><AccountCircleIcon/> Sign in</Button> */}
             <Button>
