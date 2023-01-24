@@ -10,7 +10,7 @@ const Banner = () => {
       sx={{
         position: "absolute",
         color: "white",
-        top: "30%",
+        top: "20%",
         left: "10%",
       }}
     >

@@ -5,8 +5,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Grid } from "@mui/material";
 import { height } from "@mui/system";
-import data from "./data";
-import { categories } from "./categoryData";
 import StarIcon from '@mui/icons-material/Star';
 
 const service = [
@@ -16,37 +14,19 @@ const service = [
   { icons: "/img/icons/Vector (4).png", title: "4 Activities" },
 ];
 
-export default function MediaCard() {
-  console.log(categories[0].popularlist);
-  const popData = data.filter((item) =>
-    categories[0].popularlist.includes(item.id)
-  );
-  console.log(popData);
-
-  // const arrByID = categoryData.filter(filterByID);
+export default function MediaCard(props) {
   return (
-    <Box
-      sx={{
-        // position: "absolute",
-        marginTop: -30,
-        // top: "80%",
-      }}
-    >
-      <Typography variant="h3" fontWeight={600} sx={{ marginY: 3 }}>
-        Popular Beach Destinations
-      </Typography>
-      <Grid container spacing={2}>
-        {popData.map((item) => (
+       
           <Grid item xs={3}>
-            <Card sx={{ maxWidth: 350, position: "relative" }}>
+            <Card sx={{ maxWidth: 350, position: "relative", height: 550 }}>
               <CardMedia
                 sx={{ height: 200, m: 2 }}
-                image={item.img}
+                image={props.img}
                 title="green iguana"
                 style={{ borderRadius: "30px" }}
               />
               <img
-                src={item.icon}
+                src={props.icon}
                 style={{
                   position: "absolute",
                   top: 0,
@@ -57,14 +37,14 @@ export default function MediaCard() {
               <CardContent>
                 <Box display={"flex"} justifyContent= "space-between">
                 <Typography gutterBottom variant="h5" component="div">
-                  {item.title}
+                  {props.title}
                 </Typography>
                 <Box>
                   <Typography variant="h5"> <StarIcon/> 4.7</Typography>
                 </Box>
                 </Box>
                 <Typography variant="body2" color="text.secondary">
-                  {item.p}
+                  {props.p}
                 </Typography>
                 <Box
                   sx={{
@@ -83,19 +63,13 @@ export default function MediaCard() {
                   ))}
                 </Box>
                 <ul style={{ fontSize: ".8rem" }}>
-                  <li>{item.text}</li>
-                  <li>{item.text1}</li>
-                  <li>{item.text2}</li>
+                  <li>Tour combo with return airport transfer</li>
+                  <li>City Tour</li>
+                  <li>Curious Corner</li>
                 </ul>
-              
-
-                <Typography variant="h5" textAlign={"center"}>{item.price} <span style={{fontSize: ".5rem"}}>{item.person}</span></Typography>
-                
+                <Typography variant="h5" textAlign={"center"}>{props.price} <span style={{fontSize: ".5rem"}}>{props.person}</span></Typography>                
               </CardContent>
             </Card>
           </Grid>
-        ))}
-      </Grid>
-    </Box>
   );
 }

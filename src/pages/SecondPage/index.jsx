@@ -3,10 +3,12 @@ import { Container } from "@mui/system";
 import React from "react";
 import MenuBar from "../../component/Navbar";
 import Banner from "../../component/Banner";
-import MediaCard from "../../component/CardItem";
-import ViewCard from "../../component/View";
 import SliderImg from "../../component/SliderImg";
 import Footer from "../../component/Footer";
+import PopularCard from "../../component/Popular";
+import ViewCard from "../../component/View";
+import AllCard from "../../component/Package"
+import SpecialCard from "../../component/Special";
 const Second = () => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
@@ -15,13 +17,9 @@ const Second = () => {
           backgroundImage: `url("/img/image 1 (1).png")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          // height: "calc(100vh - 100px)",
           backgroundPosition: "center center",
-          // background: "linear-gradient( #9198e5)",
-          // background: "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 13.65%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))",
           backgroundAttachment: "fixed",
           height: "100vh",
-          // width: "100%",
           position: "relative",
         }}
       >
@@ -30,9 +28,11 @@ const Second = () => {
       <Container>
         <MenuBar />
         <Banner />
-        <MediaCard />
+        <PopularCard/>
         <ViewCard/>
-        <SliderImg/>
+        <AllCard/>
+        <SpecialCard/>
+        {/* <SimpleSlider/> */}
       </Container>
       <Box>
         <Footer />

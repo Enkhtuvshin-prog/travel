@@ -3,7 +3,8 @@ import { Container } from "@mui/system";
 import React from "react";
 import MenuBar from "../../component/Navbar";
 import Banner from "../../component/Banner";
-import ImgCard from "../../component/ImgCard";
+import SimpleSlider from "../../component/Carousel";
+// import ImgCard from "../../component/ImgCard";
 import Offers from "../../component/Offrers";
 import PropertyType from "../../component/PropertyType";
 import Plan from "../../component/Plan";
@@ -33,9 +34,7 @@ const index = () => {
       <Container>
         <MenuBar />
         <Banner />
-
-        <ImgCard />
-
+        <SimpleSlider/>
         <Offers />
         <PropertyType />
         <Plan />
