@@ -1,17 +1,13 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import ButtonBase from "@mui/material/ButtonBase";
-import { height } from "@mui/system";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { Grid } from '@mui/material';
+import { Box } from '@mui/system';
 
-const Img = styled("img")({
-  margin: "auto",
-  display: "block",
-  maxWidth: "100%",
-  maxHeight: "100%",
-});
 
 const data = [
   {
@@ -39,44 +35,29 @@ const data = [
 
 export default function CardItem() {
   return (
-    <Grid container spacing={2}>
+    <Grid container gap={1} columns={12} justifyContent="space-between">
       {data.map((x) => (
-        <Paper
-          sx={{
-            p: 2,
-            m: 3,
-            maxWidth: 450,
-            backgroundColor: (theme) =>
-              theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-          }}
-        >
-          <Grid item xs={3}>
-            <ButtonBase sx={{ width: 128, height: "100%" }}>
-              <Img alt="complex" src={x.img} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography gutterBottom variant="subtitle1" component="div">
-                  {x.p}
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                  {x.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {x.text}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography sx={{ cursor: "pointer" }} variant="body2">
-                  Remove
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Paper>
+        <Card sx={{ maxWidth: 370, height: "200px", display: "flex" }}>
+            {/* <CardMedia
+              sx={{ width: "180px", p:2, m:2 }}
+              image={x.img}
+              title="green iguana"
+            /> */}
+            <img src={x.img} style={{width: "150px", padding:"10px", borderRadius: "20px" }} />
+            <CardContent  >
+              <Typography variant="h5"  color="text.secondary" fontSize={".5rem"} >
+                {x.p}
+              </Typography>
+              <Typography variant="h3" fontSize={"1rem"} sx={{my:2, fontWeight: "600"}} >
+                {x.title}
+              </Typography>
+              <Typography variant='body2'>{x.text}</Typography>
+              <Button variant='contained' sx={{m:1}} >Book now</Button>
+            </CardContent>
+        </Card>
+
       ))}
     </Grid>
   );
 }
+

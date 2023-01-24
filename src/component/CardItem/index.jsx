@@ -1,14 +1,13 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Box, Grid } from "@mui/material";
 import { height } from "@mui/system";
 import data from "./data";
 import { categories } from "./categoryData";
+import StarIcon from '@mui/icons-material/Star';
 
 const service = [
   { icons: "/img/icons/Vector (1).png", title: "2 Flights" },
@@ -18,16 +17,6 @@ const service = [
 ];
 
 export default function MediaCard() {
-  const i = data.id;
-  // const
-
-  // let callback = i => i === 0;
-  // const even = numbers.filter(callback);
-  // // even; // [2, 4, 6]
-
-  // callback = v => v % 2 === 1;
-  // const odd = numbers.filter(callback);
-  // odd; // [1, 3, 5]
   console.log(categories[0].popularlist);
   const popData = data.filter((item) =>
     categories[0].popularlist.includes(item.id)
@@ -66,9 +55,14 @@ export default function MediaCard() {
                 }}
               />
               <CardContent>
+                <Box display={"flex"} justifyContent= "space-between">
                 <Typography gutterBottom variant="h5" component="div">
                   {item.title}
                 </Typography>
+                <Box>
+                  <Typography variant="h5"> <StarIcon/> 4.7</Typography>
+                </Box>
+                </Box>
                 <Typography variant="body2" color="text.secondary">
                   {item.p}
                 </Typography>
@@ -93,8 +87,10 @@ export default function MediaCard() {
                   <li>{item.text1}</li>
                   <li>{item.text2}</li>
                 </ul>
-                <Typography variant="h4">{item.price}</Typography>
-                <span>{item.person}</span>
+              
+
+                <Typography variant="h5" textAlign={"center"}>{item.price} <span style={{fontSize: ".5rem"}}>{item.person}</span></Typography>
+                
               </CardContent>
             </Card>
           </Grid>

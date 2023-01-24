@@ -17,7 +17,7 @@ const PropertyType = () => {
       <Typography variant="h2" fontWeight={600} sx={{ color: "#000" }}>
         Browse by property type
       </Typography>
-      <Grid container sx={{ mt: 3 }} columns={14}>
+      <Grid container sx={{ mt: 3 }} columns={14} justifyContent="space-between">
         {data.map((x) => (
           <Grid xs={3} sx={{ mx: 1, position: "relative" }}>
             <Box>

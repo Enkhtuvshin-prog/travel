@@ -4,6 +4,9 @@ import React from "react";
 import MenuBar from "../../component/Navbar";
 import Banner from "../../component/Banner";
 import MediaCard from "../../component/CardItem";
+import ViewCard from "../../component/View";
+import SliderImg from "../../component/SliderImg";
+import Footer from "../../component/Footer";
 const Second = () => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
@@ -28,7 +31,13 @@ const Second = () => {
         <MenuBar />
         <Banner />
         <MediaCard />
+        <ViewCard/>
+        <SliderImg/>
       </Container>
+      <Box>
+        <Footer />
+      </Box>
+
     </Grid>
   );
 };

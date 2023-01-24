@@ -22,9 +22,11 @@ const index = () => {
           backgroundSize: "cover",
           // height: "calc(100vh - 100px)",
           backgroundPosition: "center center",
-          background:
-            "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 13.65%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(Pexels Videos 2146396.png)",
+          // background:
+          //   "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 13.65%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(Pexels Videos 2146396.png)",
           backgroundAttachment: "fixed",
+          fill: "linearGradient rgba(255, 255, 255, 0)",
+          // background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 89.58%)",
           height: "90vh",
         }}
       ></Grid>

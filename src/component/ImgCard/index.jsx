@@ -12,7 +12,7 @@ const data = [
 //     borderRadius: "20px",
 //   },
 // };
-const index = () => {
+const index = (props) => {
   return (
     <Grid
       sx={{
@@ -26,13 +26,14 @@ const index = () => {
       <Typography variant="h4" fontWeight="600">
         Top Vacation Destinations
       </Typography>
-      <Grid container columns={12} spacing={2} sx={{ marginY: 3 }}>
-        {data.map((x) => (
-          <Grid item xs={3} sx={{ position: "relative" }}>
+      <Grid sx={{ position: "relative" }}>
+      {/* <Grid container columns={12} spacing={2} sx={{ marginY: 3 }}> */}
+        {/* {data.map((x) => ( */}
+          {/* <Grid item xs={3} sx={{ position: "relative" }}> */}
             <Box>
               <img
-                src={`${x.img}`}
-                style={{ borderRadius: 20, width: "100%", height: "250px" }}
+                src={`${props.img}`}
+                style={{  width: "100%", height: "250px" }}
               />
             </Box>
             <Typography
@@ -45,10 +46,10 @@ const index = () => {
                 ml: 5,
               }}
             >
-              {x.title}{" "}
+              {props.title}{" "}
             </Typography>
-          </Grid>
-        ))}
+          {/* </Grid> */}
+        {/* ))} */}
       </Grid>
     </Grid>
   );
