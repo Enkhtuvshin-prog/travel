@@ -13,7 +13,7 @@ import CommunityCard from "../../component/Community";
 import TravelApp from "../../component/TravelApp";
 import Footer from "../../component/Footer";
 
-const index = () => {
+const index = ( changeMode) => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
       <Grid
@@ -32,7 +32,7 @@ const index = () => {
         }}
       ></Grid>
       <Container>
-        <MenuBar />
+        <MenuBar changeMode={changeMode}/>
         <Banner />
         <SimpleSlider/>
         <Offers />

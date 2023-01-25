@@ -3,12 +3,12 @@ import { Container } from "@mui/system";
 import React from "react";
 import MenuBar from "../../component/Navbar";
 import Banner from "../../component/Banner";
-import SliderImg from "../../component/SliderImg";
 import Footer from "../../component/Footer";
 import PopularCard from "../../component/Popular";
 import ViewCard from "../../component/View";
 import AllCard from "../../component/Package"
 import SpecialCard from "../../component/Special";
+import ToggleColorMode from "../../component/Switch";
 const Second = () => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
@@ -32,7 +32,7 @@ const Second = () => {
         <ViewCard/>
         <AllCard/>
         <SpecialCard/>
-        {/* <SimpleSlider/> */}
+        <ToggleColorMode/>
       </Container>
       <Box>
         <Footer />

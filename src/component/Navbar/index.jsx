@@ -15,15 +15,16 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NestedModal from "../modal";
 import { NavLink } from "react-router-dom";
-// import { Paper } from "@mui/material";
+import Switch from '@mui/material/Switch';
 
 const drawerWidth = 240;
 const navItems = ["Home", "styles", "flights", "Packages"];
 
-function MenuBar(props) {
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
+
+function MenuBar(props, changeMode) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -92,20 +93,15 @@ function MenuBar(props) {
                 {item}
               </NavLink>
             ))}
-            {/* <Button  variant='warming' sx={{color: "white" }}><AccountCircleIcon/> Sign in</Button> */}
             <Button>
               <NestedModal />
+            </Button>
+            <Button>
+              <Switch {...label} defaultChecked />
             </Button>
           </Box>
         </Toolbar>
       </AppBar>
-      {/* <Box component="main" sx={{ p: 5 }}>
-        <Paper
-          style={{
-            backgroundImage: `url(${"../../../public/img/ bg-img.jpeg"})`,
-          }}
-        ></Paper>
-      </Box> */}
     </Box>
   );
 }
