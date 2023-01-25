@@ -3,9 +3,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const data = [
-  { title: "Beaches", img: "/img/icons/image 4.png" },
-  { title: "Deserts", img: "/img/icons/image 16.png" },
-  { title: "Mountains", img: "/img/icons/image 3 (1).png" },
+  { title: "Beaches", img: "/img/icons/image 4.png", link: "/Beaches" },
+  { title: "Deserts", img: "/img/icons/image 16.png", link: "/Mountains" },
+  { title: "Mountains", img: "/img/icons/image 3 (1).png", link: "/Mountains" },
   { title: "Iconic Cities", img: "/img/icons/image 13.png" },
   { title: " House boats", img: "/img/icons/image 17.png" },
   { title: "Countryside", img: "/img/icons/image 10.png" },

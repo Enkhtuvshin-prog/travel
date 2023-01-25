@@ -6,9 +6,8 @@ import Banner from "../../component/Banner";
 import Footer from "../../component/Footer";
 import PopularCard from "../../component/Popular";
 import ViewCard from "../../component/View";
-import AllCard from "../../component/Package"
+import AllCard from "../../component/Package";
 import SpecialCard from "../../component/Special";
-import ToggleColorMode from "../../component/Switch";
 const Second = () => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
@@ -28,16 +27,14 @@ const Second = () => {
       <Container>
         <MenuBar />
         <Banner />
-        <PopularCard/>
-        <ViewCard/>
-        <AllCard/>
-        <SpecialCard/>
-        <ToggleColorMode/>
+        <PopularCard />
+        <ViewCard />
+        <AllCard />
+        <SpecialCard />
       </Container>
       <Box>
         <Footer />
       </Box>
-
     </Grid>
   );
 };

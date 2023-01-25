@@ -17,14 +17,14 @@ import Button from "@mui/material/Button";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import NestedModal from "../modal";
 import { NavLink } from "react-router-dom";
-import Switch from '@mui/material/Switch';
+import Switch from "@mui/material/Switch";
 
 const drawerWidth = 240;
 const navItems = ["Home", "styles", "flights", "Packages"];
 
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+const label = { inputProps: { "aria-label": "Switch demo" } };
 
-function MenuBar(props, changeMode) {
+function MenuBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -97,7 +97,7 @@ function MenuBar(props, changeMode) {
               <NestedModal />
             </Button>
             <Button>
-              <Switch {...label} defaultChecked />
+              <Switch {...label} defaultChecked onChange={props.changeMode} />
             </Button>
           </Box>
         </Toolbar>
