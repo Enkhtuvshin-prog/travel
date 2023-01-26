@@ -8,26 +8,26 @@ import React from "react";
 // };
 const index = (props) => {
   return (
-      <Grid sx={{ position: "relative" , m: 2 }}>
-            <Box>
-              <img
-                src={`${props.img}`}
-                style={{  width: "100%", height: "250px", borderRadius: 20 }}
-              />
-            </Box>
-            <Typography
-              variant="h5"
-              sx={{
-                // color: "#000",
-                position: "absolute",
-                bottom: "20px",
-                textAlign: "center",
-                ml: 5,
-              }}
-            >
-              {props.title}{" "}
-            </Typography>
-      </Grid>
+    <Grid item xs={4} sm={3} md={2} lg={1} sx={{ position: "relative", m: 2 }}>
+      <Box>
+        <img
+          src={`${props.img}`}
+          style={{ width: "100%", height: "250px", borderRadius: 20 }}
+        />
+      </Box>
+      <Typography
+        variant="h5"
+        sx={{
+          // color: "#000",
+          position: "absolute",
+          bottom: "20px",
+          textAlign: "center",
+          ml: 5,
+        }}
+      >
+        {props.title}{" "}
+      </Typography>
+    </Grid>
   );
 };
 

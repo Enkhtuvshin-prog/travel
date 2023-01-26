@@ -16,10 +16,16 @@ const data = [
 ];
 
 const Categoty = () => {
+  // const [news, setNews] = useState(productData);
+  // const handleClick = (category) => {
+  //   const filters = productData.filter((item) => item.category == category);
+  //   console.log("filter: ", filters);
+  //   setNews(filters);
+  // };
   return (
     <Grid container spacing={10} marginY={"5px"}>
       {data.map((x) => (
-        <Grid item xs={1}>
+        <Grid item xs={4} sm={3} md={2} lg={1}>
           <img src={x.img} />
           <NavLink
             to={"/Second"}

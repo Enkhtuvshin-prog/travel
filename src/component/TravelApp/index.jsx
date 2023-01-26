@@ -26,7 +26,7 @@ const TravelApp = () => {
           position: "absolute",
         }}
       >
-        <Grid item xs={4}>
+        <Grid xs={12} sm={6} md={4} lg={3}>
           <img src="/img/app/iPhone 13 Mockup label.png" />
         </Grid>
 

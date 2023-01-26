@@ -10,16 +10,29 @@ const data = [
 const PropertyType = () => {
   return (
     <Grid
+      container
       sx={{
         marginY: "20px",
       }}
     >
-      <Typography variant="h2" fontWeight={600} sx={{ color: "#000" }}>
+      <Typography variant="h2" fontWeight={600}>
         Browse by property type
       </Typography>
-      <Grid container sx={{ mt: 3 }} columns={14} justifyContent="space-between">
+      <Grid
+        container
+        sx={{ mt: 3 }}
+        columns={14}
+        justifyContent="space-between"
+      >
         {data.map((x) => (
-          <Grid xs={3} sx={{ mx: 1, position: "relative" }}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            sx={{ mx: 1, position: "relative" }}
+          >
             <Box>
               <img
                 src={`${x.img}`}

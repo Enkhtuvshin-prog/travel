@@ -8,6 +8,7 @@ import PopularCard from "../../component/Popular";
 import ViewCard from "../../component/View";
 import AllCard from "../../component/Package";
 import SpecialCard from "../../component/Special";
+// import SwipeableTextMobileStepper from "../../component/Detail";
 const Second = () => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
@@ -31,6 +32,7 @@ const Second = () => {
         <ViewCard />
         <AllCard />
         <SpecialCard />
+        {/* <SwipeableTextMobileStepper /> */}
       </Container>
       <Box>
         <Footer />
