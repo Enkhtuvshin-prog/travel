@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { useState } from "react";
 import { Container } from "@mui/system";
 import React from "react";
 import MenuBar from "../../component/Navbar";
@@ -13,7 +14,7 @@ import CommunityCard from "../../component/Community";
 import TravelApp from "../../component/TravelApp";
 import Footer from "../../component/Footer";
 
-const index = ({ changeMode }) => {
+const Home = ({ changeMode }) => {
   return (
     <Grid sx={{ fontFamily: "Helvetica", color: "#F2F3F4 " }}>
       <Grid
@@ -32,7 +33,7 @@ const index = ({ changeMode }) => {
         }}
       ></Grid>
       <Container>
-        <MenuBar changeMode={changeMode} />
+        {/* <MenuBar changeMode={changeMode} /> */}
         <Banner />
         <SimpleSlider />
         <Offers />
@@ -48,4 +49,4 @@ const index = ({ changeMode }) => {
   );
 };
 
-export default index;
+export default Home;

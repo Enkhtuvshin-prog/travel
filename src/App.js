@@ -7,6 +7,7 @@ import { amber, deepOrange, grey } from "@mui/material/colors";
 import { PaletteMode } from "@mui/material";
 import { light } from "@mui/material/styles/createPalette";
 import DetailCard from "./component/Detail";
+import MenuBar from "./component/Navbar";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   // const darkTheme = createTheme({
@@ -66,8 +67,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <MenuBar changeMode={changeMode} />
         <Routes>
-          <Route path="/" element={<Home changeMode={changeMode} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Second" element={<SecondPage />} />
           <Route path="/Detail" element={<DetailCard />} />
         </Routes>

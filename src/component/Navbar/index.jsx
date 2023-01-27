@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -16,8 +17,9 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import NestedModal from "../modal";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import Switch from "@mui/material/Switch";
+import { Grid } from "swiper";
 
 const drawerWidth = 240;
 const navItems = ["Home", "styles", "flights", "Packages"];
@@ -25,12 +27,30 @@ const navItems = ["Home", "styles", "flights", "Packages"];
 const label = { inputProps: { "aria-label": "Switch demo" } };
 
 function MenuBar(props) {
+  const [isLogged, setIsLogged] = useState("false");
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+  // const newLogged = localStorage.getItem("isLogged");
+  // const [isLogged, setIsLogged] = useState(newLogged);
+  // const logOut = () => {
+  //   localStorage.setItem("isLogged", false);
+  //   setIsLogged(false);
+  // };
+  // if (!isLogged === "true") {
+  //   return (
+  //     <Grid>
+  //       <Typography>kkkk</Typography>
+  //       <Button onClick={logOut}>garah</Button>
+  //     </Grid>
+  //   );
+  // } else {
+  //   return <Navigate replace to="/" />;
+  // }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -94,7 +114,7 @@ function MenuBar(props) {
               </NavLink>
             ))}
             <Button>
-              <NestedModal />
+              <NestedModal isLogged={isLogged} />
             </Button>
             <Button>
               <Switch {...label} defaultChecked onChange={props.changeMode} />
