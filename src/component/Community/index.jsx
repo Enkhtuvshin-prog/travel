@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid } from "@mui/material";
+import HalfRating from "../Rating";
 
 const data = [
   {
@@ -39,7 +40,7 @@ export default function CommunityCard() {
       </Typography>
       {data.map((x) => (
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Card>
+          <Card >
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -59,6 +60,7 @@ export default function CommunityCard() {
                 </Typography>
               </CardContent>
             </CardActionArea>
+            <HalfRating />
           </Card>
         </Grid>
       ))}

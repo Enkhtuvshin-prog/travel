@@ -24,10 +24,10 @@ export default class SliderCard extends Component {
       slidesToScroll: 1,
     };
     return (
-      <Box>
+      <Box margin={"10px"}>
         <Slider {...settings}>
           {data.map((x) => (
-            <img src={x.img} height="550px" />
+            <img src={x.img} height="350px" width="100px" />
           ))}
         </Slider>
       </Box>

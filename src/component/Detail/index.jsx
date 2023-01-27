@@ -6,6 +6,14 @@ import "slick-carousel/slick/slick-theme.css";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocationCitySharpIcon from "@mui/icons-material/LocationCitySharp";
 import SliderCard from "./SliderImg";
+import BasicModal from "./Modal";
+import HalfRating from "../Rating";
+import { flex } from "@mui/system";
+import Reviews from "./Review";
+import MapInfo from "./Map";
+import Amenities from "./Amenities";
+import ImageScroll from "./ImageScroll";
+
 const data = [
   { img: "/img/22.webp" },
   { img: "/img/z2.webp" },
@@ -15,13 +23,16 @@ const data = [
 
 const DetailCard = () => {
   return (
-    <Grid sx={{ width: "800px", height: "500px", margin: "auto" }}>
+    <Grid sx={{
+      maxWidth: "800px", margin: "auto", backgroundColor: "#cfd8dc", borderRadius: 5, padding: 2,
+      fontFamily: "sans-serif"
+    }}>
       <Grid
         container
-        // sx={{ backgroundColor: "gray", borderRadius: 10 }}
+        justifyContent={"space-between"}
       >
-        <Grid item xs={8}>
-          <Typography>W Bangkok Hotel (SHA Plus+)</Typography>
+        <Grid item xs={8}  >
+          <Typography variant="h5" >W Bangkok Hotel (SHA Plus+)</Typography>
           <Box>
             <Box>
               <LocationOnIcon />
@@ -51,7 +62,31 @@ const DetailCard = () => {
           </Box>
         </Grid>
       </Grid>
-      <SliderCard />
+      <Box>
+        <Box>
+          <SliderCard />
+        </Box>
+        <Box>
+          <ImageScroll />
+        </Box>
+
+      </Box>
+      {/* <BasicModal/> */}
+      <Grid container spacing={2}
+        sx={{ backgroundColor: "#e3f2fd", borderRadius: 10, width: "100%", m: 1, }}  >
+        <Grid item xs={6}>
+          <Reviews />
+        </Grid>
+        <Grid item xs={2}>
+          <MapInfo />
+        </Grid>
+        <Grid item xs={3}>
+          <Amenities />
+        </Grid>
+      </Grid>
+      {/* <ImageScroll /> */}
+
+      {/* <HalfRating/> */}
     </Grid>
   );
 };

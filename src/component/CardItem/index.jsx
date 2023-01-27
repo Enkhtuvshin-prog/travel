@@ -4,8 +4,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Grid } from "@mui/material";
-import { height } from "@mui/system";
 import StarIcon from "@mui/icons-material/Star";
+import HalfRating from "../Rating";
 
 const service = [
   { icons: "/img/icons/Vector (1).png", title: "2 Flights" },
@@ -46,10 +46,7 @@ export default function MediaCard(props) {
               {props.title}
             </Typography>
             <Box>
-              <Typography variant="h5">
-                {" "}
-                <StarIcon /> 4.7
-              </Typography>
+              <HalfRating/>
             </Box>
           </Box>
           <Typography variant="body2" color="text.secondary">
