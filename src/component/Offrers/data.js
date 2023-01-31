@@ -20,5 +20,12 @@ export const data = [
       btn: "Book Now",
       img: "/img/image 19.png",
     },
+    {
+      p: "Domestic Flights",
+      title: "Huge savings on flight with trxvl.",
+      text: "Book domestic flights starting @ just ₹1459",
+      btn: "Book Now",
+      img: "/img/image 19.png",
+    },
   ];
   

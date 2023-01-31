@@ -5,39 +5,17 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid } from "@mui/material";
 import HalfRating from "../Rating";
+import {data} from "./data";
+import { Box } from "@mui/system";
 
-const data = [
-  {
-    title: "India",
-    text: "Travel community",
-    p: "155,073 travelers",
-    img: "/img/community/Frame 31.png",
-  },
-  {
-    title: "Travel Talk",
-    text: "Travel community",
-    p: "155,073 travelers",
-    img: "/img/community/Frame 31 (1).png",
-  },
-  {
-    title: "Beach",
-    text: "Travel community",
-    p: "155,073 travelers",
-    img: "/img/community/Frame 31 (2).png",
-  },
-  {
-    title: "Moutains",
-    text: "Travel community",
-    p: "155,073 travelers",
-    img: "/img/community/Frame 31 (3).png",
-  },
-];
+
 export default function CommunityCard() {
   return (
     <Grid container sx={{ marginY: " 20px" }} columns={13} gap={2}>
       <Typography variant="h3">
         Connect with other travelers in our community
       </Typography>
+     
       {data.map((x) => (
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <Card >

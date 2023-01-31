@@ -20,11 +20,21 @@ const Offers = () => {
         Offers
       </Typography>
       <Grid container>
-        <Slider {...settings}>
+        <Box  sx={{
+            display: "flex",
+            marginTop: "5%",
+            gap: "30px",
+            overflowX: "scroll",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }} >
+        {/* <Slider {...settings}> */}
           {data.map((x) => (
             <CardItem title={x.title} img={x.img} p={x.p} text={x.text} />
           ))}
-        </Slider>
+          </Box>
+        {/* </Slider> */}
       </Grid>
     </Box>
   );

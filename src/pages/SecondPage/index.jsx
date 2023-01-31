@@ -28,11 +28,10 @@ const Second = () => {
       <Container>
         <MenuBar />
         <Banner />
-        <PopularCard />
+        {/* <PopularCard />
         <ViewCard />
         <AllCard />
-        <SpecialCard />
-        {/* <SwipeableTextMobileStepper /> */}
+        <SpecialCard /> */}
       </Container>
       <Box>
         <Footer />

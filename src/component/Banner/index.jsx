@@ -10,7 +10,7 @@ const Banner = () => {
       sx={{
         position: "absolute",
         color: "white",
-        top: "20%",
+        top: "10%",
         left: "10%",
       }}
     >
@@ -18,7 +18,7 @@ const Banner = () => {
         The whole world <br /> awaits.
       </Typography>
       <SearchBtn />
-      <Categoty />
+      {/* <Categoty /> */}
       {/* <ImgCard /> */}
     </Box>
   );

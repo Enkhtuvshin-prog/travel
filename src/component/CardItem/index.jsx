@@ -14,7 +14,7 @@ const service = [
   { icons: "/img/icons/Vector (4).png", title: "4 Activities" },
 ];
 
-export default function MediaCard(props) {
+export default function MediaCard({cardList}) {
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <Card
@@ -27,12 +27,12 @@ export default function MediaCard(props) {
       >
         <CardMedia
           sx={{ height: 200, m: 2 }}
-          image={props.img}
+          image={cardList.img}
           title="green iguana"
           style={{ borderRadius: "30px" }}
         />
         <img
-          src={props.icon}
+          src={cardList.icon}
           style={{
             position: "absolute",
             top: 0,
@@ -43,14 +43,14 @@ export default function MediaCard(props) {
         <CardContent>
           <Box display={"flex"} justifyContent="space-between">
             <Typography gutterBottom variant="h5" component="div">
-              {props.title}
+              {cardList.title}
             </Typography>
             <Box>
               <HalfRating/>
             </Box>
           </Box>
           <Typography variant="body2" color="text.secondary">
-            {props.p}
+            {cardList.p}
           </Typography>
           <Box
             sx={{
@@ -72,8 +72,8 @@ export default function MediaCard(props) {
             <li>Curious Corner</li>
           </ul>
           <Typography variant="h5" textAlign={"center"}>
-            {props.price}{" "}
-            <span style={{ fontSize: ".5rem" }}>{props.person}</span>
+            {cardList.price}{" "}
+            <span style={{ fontSize: ".5rem" }}>{cardList.person}</span>
           </Typography>
         </CardContent>
       </Card>

@@ -37,7 +37,7 @@ const SignIn = (props) => {
       setOpen(true);
     } else {
       console.log(email, password);
-      localStorage.setItem("isLogged", true);
+      localStorage.setItem("props.isLogged", true);
       return <Navigate replace to="/" />;
     }
   };

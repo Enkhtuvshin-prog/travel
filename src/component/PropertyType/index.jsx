@@ -24,6 +24,16 @@ const PropertyType = () => {
         columns={14}
         justifyContent="space-between"
       >
+        <Box sx={{
+            display: "flex",
+            marginTop: "5%",
+            gap: "30px",
+            overflowX: "scroll",
+  border:'1px solid red',
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}>
         {data.map((x) => (
           <Grid
             item
@@ -57,6 +67,7 @@ const PropertyType = () => {
             </Typography>
           </Grid>
         ))}
+        </Box>
       </Grid>
     </Grid>
   );
