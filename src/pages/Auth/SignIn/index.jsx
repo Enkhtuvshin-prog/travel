@@ -18,6 +18,10 @@ const SignIn = (props) => {
     email: "",
     password: "",
   });
+  const [open, setOpen] = useState(false);
+  const [isMessage, setIsMessage] = useState("");
+  const [state, setState] = useState("error");
+
   const change = (e) => {
     console.log(e.target.name);
     console.log(e.target.value);
@@ -28,8 +32,7 @@ const SignIn = (props) => {
 
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
-  const [open, setOpen] = useState(false);
-  const [isMessage, setIsMessage] = useState("");
+
   // const navigate = useNavigate();
   const handleOpen = () => {
     setOpen(true);
@@ -55,6 +58,7 @@ const SignIn = (props) => {
         ...user,
       });
       console.log("RES", res);
+      setState("success");
       setIsMessage(res.response.data.message);
     } catch (err) {
       console.log("err", err);
@@ -161,7 +165,7 @@ const SignIn = (props) => {
         // message="Note archived"
         // action={action}
       >
-        <Alert severity="message">{isMessage}</Alert>
+        <Alert severity={state}>{isMessage}</Alert>
       </Snackbar>
     </Container>
   );
