@@ -27,9 +27,9 @@ const label = { inputProps: { "aria-label": "Switch demo" } };
 
 function MenuBar(props) {
   // const [isLogged, setIsLogged] = useState("false");
-  
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -52,18 +52,19 @@ function MenuBar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item}>
-            <ListItemButton sx={{ textAlign: "center" , color: "#fff" }}>
-              <NavLink to={"/"} primary={item} sx={{color: "#fff"}}  />
+            <ListItemButton sx={{ textAlign: "center", color: "#fff" }}>
+              <NavLink to={"/"} primary={item} sx={{ color: "#fff" }} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
     </Box>
   );
-  const container = window !== undefined ? () => window().document.body : undefined;
-   
-  if(!isLogged){
-    return <Navigate replace to="/Auth"/>
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  if (!isLogged) {
+    return <Navigate replace to="/Auth" />;
   }
   return (
     <Box sx={{ display: "flex" }}>
@@ -124,8 +125,11 @@ function MenuBar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
           }}
         >
           {drawer}
@@ -133,6 +137,6 @@ function MenuBar(props) {
       </Box>
     </Box>
   );
-} 
+}
 
-export default MenuBar
+export default MenuBar;

@@ -18,22 +18,22 @@ const SignIn = (props) => {
     email: "",
     password: "",
   });
-  const change = (e) =>{
+  const change = (e) => {
     console.log(e.target.name);
     console.log(e.target.value);
-    const key= e.target.name;
-    const value = e.target.value
-    setUser({ ...user, [key]: value});
-  }
-  
+    const key = e.target.name;
+    const value = e.target.value;
+    setUser({ ...user, [key]: value });
+  };
+
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   const [open, setOpen] = useState(false);
-  const  [error, setError] = useState("")
+  const [isMessage, setIsMessage] = useState("");
   // const navigate = useNavigate();
-  const handleOpen = () =>{
-    setOpen(true)
-  }
+  const handleOpen = () => {
+    setOpen(true);
+  };
   const handleClose = () => {
     setOpen(false);
   };
@@ -46,25 +46,26 @@ const SignIn = (props) => {
   //   setPassword(e.target.value);
   // };
 
-  const handleSubmit = async(event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(user);
     try {
       const res = await axios.post("http://localhost:8003/signin", {
-        id:"4f982ca9-0d41-489f-9034-3422df71fe16",
+        // id: "7f98956c-db1d-4fb0-9aee-d9a39aa9745f",
         ...user,
       });
       console.log("RES", res);
+      setIsMessage(res.response.data.message);
     } catch (err) {
       console.log("err", err);
-      setError(err.response.data.message);
+      setIsMessage(err.response.data.message);
       handleOpen();
     }
 
-  //   console.log(user);
-  //  const res =  await axios.post("http://localhost:8003/signin", {
-  //   id:"09bc3da6-fd19-4215-876e-0715d645397c", ...user
-  //  } )
+    //   console.log(user);
+    //  const res =  await axios.post("http://localhost:8003/signin", {
+    //   id:"09bc3da6-fd19-4215-876e-0715d645397c", ...user
+    //  } )
   };
   // const login = () => {
   //   console.log("login");
@@ -160,9 +161,7 @@ const SignIn = (props) => {
         // message="Note archived"
         // action={action}
       >
-        <Alert severity="error">
-          {error}
-        </Alert>
+        <Alert severity="message">{isMessage}</Alert>
       </Snackbar>
     </Container>
   );
