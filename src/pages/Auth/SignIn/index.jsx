@@ -12,35 +12,70 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Snackbar, Alert } from "@mui/material";
 import { Navigate } from "react-router-dom";
+import axios from "axios";
 const SignIn = (props) => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  const change = (e) =>{
+    console.log(e.target.name);
+    console.log(e.target.value);
+    const key= e.target.name;
+    const value = e.target.value
+    setUser({ ...user, [key]: value});
+  }
+  
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
   const [open, setOpen] = useState(false);
+  const  [error, setError] = useState("")
   // const navigate = useNavigate();
-  const onClose = () => {
+  const handleOpen = () =>{
+    setOpen(true)
+  }
+  const handleClose = () => {
     setOpen(false);
   };
-  const changeEmail = (e) => {
-    console.log("email:", e.target.value);
-    setEmail(e.target.value);
-  };
-  const changePassword = (e) => {
-    console.log("password:", e.target.value);
-    setPassword(e.target.value);
-  };
-  const login = () => {
-    console.log("login");
-    if (email === "" || password === "") {
-      setOpen(true);
-    } else {
-      console.log(email, password);
-      localStorage.setItem("props.isLogged", true);
-      return <Navigate replace to="/" />;
+  // const changeEmail = (e) => {
+  //   console.log("email:", e.target.value);
+  //   setEmail(e.target.value);
+  // };
+  // const changePassword = (e) => {
+  //   console.log("password:", e.target.value);
+  //   setPassword(e.target.value);
+  // };
+
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    console.log(user);
+    try {
+      const res = await axios.post("http://localhost:8003/signin", {
+        id:"4f982ca9-0d41-489f-9034-3422df71fe16",
+        ...user,
+      });
+      console.log("RES", res);
+    } catch (err) {
+      console.log("err", err);
+      setError(err.response.data.message);
+      handleOpen();
     }
+
+  //   console.log(user);
+  //  const res =  await axios.post("http://localhost:8003/signin", {
+  //   id:"09bc3da6-fd19-4215-876e-0715d645397c", ...user
+  //  } )
   };
+  // const login = () => {
+  //   console.log("login");
+  //   if (email === "" || password === "") {
+  //     setOpen(true);
+  //   } else {
+  //     console.log(email, password);
+  //     localStorage.setItem("props.isLogged", true);
+  //     return <Navigate replace to="/" />;
+  //   }
+  // };
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -72,7 +107,7 @@ const SignIn = (props) => {
             name="email"
             autoComplete="email"
             autoFocus
-            onChange={changeEmail}
+            onChange={change}
           />
           <TextField
             margin="normal"
@@ -83,7 +118,8 @@ const SignIn = (props) => {
             type="password"
             id="password"
             autoComplete="current-password"
-            onChange={changePassword}
+            // onChange={changePassword}
+            onChange={change}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -94,7 +130,7 @@ const SignIn = (props) => {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-            onClick={login}
+            onClick={handleSubmit}
           >
             Sign In
           </Button>
@@ -120,12 +156,12 @@ const SignIn = (props) => {
       <Snackbar
         open={open}
         autoHideDuration={3000}
-        onClose={onClose}
+        onClose={handleClose}
         // message="Note archived"
         // action={action}
       >
         <Alert severity="error">
-          Хэрэглэгчийн нэвтрэх нэр эсвэл нууц үг буруу байна.
+          {error}
         </Alert>
       </Snackbar>
     </Container>
